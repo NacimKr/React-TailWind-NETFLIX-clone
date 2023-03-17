@@ -6,13 +6,12 @@ const Row = ({title, data}) => {
   console.log(data)
   return (
     <div className="mt-8 m-2">
-      <h2 className="text-white font-black text-xl">{title}</h2>
-
-      <div className="flex gap-4 mt-2 flex-wrap">
+      <h2 className="text-white font-black text-xl ml-24 mb-4">{title}</h2>
+      <div className="flex flex-wrap gap-4 justify-center">
         {
-          data.results.map(image => {
+          data.results.map((image, index) => {
             return (
-              <Movie image={image} />
+              <Movie key={index} image={image} />
             )
           })
         }
