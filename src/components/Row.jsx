@@ -3,18 +3,23 @@ import React from 'react'
 const Row = ({title, data}) => {
   console.log(data)
   return (
-    <div className="mt-5 m-2">
-      <h2 className="text-white font-black text-2xl">{title}</h2>
+    <div className="mt-8 m-2">
+      <h2 className="text-white font-black text-xl">{title}</h2>
 
-      <div className="flex gap-2 mt-2">
+      <div className="flex gap-4 mt-2 flex-wrap">
         {
           data.results.map(image => {
             return (
-              <img 
-                className="w-full h-full object-cover z-20" 
-                src={`https://image.tmdb.org/t/p/w200/${image.poster_path}`} 
-                alt="" 
-              />
+              <div className="inline-block relative cursor-pointer relative">
+                <img 
+                  className="w-full h-auto object-cover z-20 bg-gray-800 "
+                  style={{"width":"150px"}} 
+                  src={`https://image.tmdb.org/t/p/original/${image.poster_path}`} 
+                  alt={image.title} />
+                <div className="absolute opacity-0 top-0 left-0 w-full h-full hover:bg-black/50 hover:opacity-100 hover:z-50 text-white">
+                  <p>{image.title}</p>
+                </div>
+              </div>
             )
           })
         }
