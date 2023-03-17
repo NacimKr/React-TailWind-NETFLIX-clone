@@ -5,7 +5,7 @@ import APIMovies from '../APIMovies'
 
 const Home = () => {
 
-  const [typeMovies, setTypeMovies] = useState();
+  const [typeMovies, setTypeMovies] = useState([]);
 
   useEffect(() => {
     const getType = async() => {
@@ -20,10 +20,10 @@ const Home = () => {
   return (
     <div>
       <Main />
-      <Row title="Up Coming" data={typeMovies[0].upComing} />
-      <Row title="Popular" data={typeMovies[0].popular} />
-      <Row title="Top Rated" data={typeMovies[0].topRated} />
-      <Row title="Trending" data={typeMovies[0].trending} />
+      <Row title="Up Coming" data={typeMovies[0]?.upComing} />
+      <Row title="Popular" data={typeMovies[0]?.popular} />
+      <Row title="Top Rated" data={typeMovies[0]?.topRated} />
+      <Row title="Trending" data={typeMovies[0]?.trending} />
     </div>
   )
 }
