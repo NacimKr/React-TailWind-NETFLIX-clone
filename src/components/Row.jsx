@@ -10,14 +10,14 @@ const Row = ({title, data}) => {
         {
           data.results.map(image => {
             return (
-              <div className="inline-block relative cursor-pointer relative">
+              <div className="inline-block cursor-pointer relative">
                 <img 
                   className="w-full h-auto object-cover z-20 bg-gray-800 "
                   style={{"width":"150px"}} 
                   src={`https://image.tmdb.org/t/p/original/${image.poster_path}`} 
                   alt={image.title} />
-                <div className="absolute opacity-0 top-0 left-0 w-full h-full hover:bg-black/50 hover:opacity-100 hover:z-50 text-white">
-                  <p>{image.title}</p>
+                <div className="absolute opacity-0 text-center top-0 left-0 w-full h-full hover:bg-black/80 hover:opacity-100 hover:z-50 text-white">
+                  <p className="flex items-center h-full font-bold text-center">{image.title}</p>
                 </div>
               </div>
             )
